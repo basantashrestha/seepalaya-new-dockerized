@@ -1,0 +1,21 @@
+FROM postgres:15.7-alpine3.18
+ENV PG_MAX_WAL_SENDERS 8
+ENV PG_WAL_KEEP_SEGMENTS 8
+
+#Set timezone
+ENV TZ=Asia/Kathmandu
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+##Sent to .env file
+#ENV POSTGRES_DB=courses
+#ENV POSTGRES_USER=postgres
+#ENV POSTGRES_PASSWORD=
+
+# Copy the custom initialization script to the Docker image
+COPY create_celery.sh /docker-entrypoint-initdb.d/
+COPY *.sql /tmp/
+COPY populate_ep.sh /docker-entrypoint-initdb.d/
+
+# Grant execution permissions to the script
+#RUN chmod +x /docker-entrypoint-initdb.d/create_celery.sh
+RUN chmod +x /docker-entrypoint-initdb.d/populate_ep.sh

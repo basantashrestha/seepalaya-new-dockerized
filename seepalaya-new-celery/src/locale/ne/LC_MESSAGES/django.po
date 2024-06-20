@@ -1,0 +1,196 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-05-17 13:50+0545\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\config\settings.py:159
+msgid "English"
+msgstr ""
+
+#: .\config\settings.py:160
+msgid "Nepali"
+msgstr ""
+
+#: .\config\settings.py:161
+msgid "Hindi"
+msgstr ""
+
+#: .\courses_apps\account\services.py:71
+msgid "User with the email already exists."
+msgstr ""
+
+#: .\courses_apps\account\services.py:106
+msgid "User role does not exist."
+msgstr ""
+
+#: .\courses_apps\account\services.py:131
+msgid "Email or Username is incorrect."
+msgstr ""
+
+#: .\courses_apps\account\services.py:137
+msgid "Invalid password"
+msgstr ""
+
+#: .\courses_apps\account\services.py:165
+msgid "User does not exist"
+msgstr ""
+
+#: .\courses_apps\account\services.py:175
+msgid "There was some error, email could not be sent."
+msgstr ""
+
+#: .\courses_apps\account\services.py:185
+msgid "User does not exist."
+msgstr ""
+
+#: .\courses_apps\account\services.py:187
+msgid "Invalid token."
+msgstr ""
+
+#: .\courses_apps\account\services.py:199
+msgid "Old password is incorrect."
+msgstr ""
+
+#: .\courses_apps\account\services.py:212
+msgid "User with the given email does not exist."
+msgstr ""
+
+#: .\courses_apps\account\services.py:239
+#: .\courses_apps\account\services.py:330
+#: .\courses_apps\account\services.py:360
+msgid "Email does not belong to the user."
+msgstr ""
+
+#: .\courses_apps\account\services.py:243
+#: .\courses_apps\account\services.py:333
+#: .\courses_apps\account\services.py:363
+msgid "Email does not exist."
+msgstr ""
+
+#: .\courses_apps\account\services.py:247
+msgid "Email already verified."
+msgstr ""
+
+#: .\courses_apps\account\services.py:261
+msgid "User already verified"
+msgstr ""
+
+#: .\courses_apps\account\services.py:282
+msgid "Confirmation link is invalid."
+msgstr ""
+
+#: .\courses_apps\account\services.py:285
+msgid ""
+"Confiramation email has expired. Please request a new confirmation email."
+msgstr ""
+
+#: .\courses_apps\account\services.py:314
+msgid "Email already exists."
+msgstr ""
+
+#: .\courses_apps\account\services.py:335
+msgid "Email is already primary."
+msgstr ""
+
+#: .\courses_apps\account\services.py:338
+msgid "Email not verified."
+msgstr ""
+
+#: .\courses_apps\account\services.py:365
+msgid "Cannot remove primary email."
+msgstr ""
+
+#: .\courses_apps\account\services.py:378
+msgid "Invalid uid, image does not exist."
+msgstr ""
+
+#: .\courses_apps\guardian\selectors.py:120
+#: .\courses_apps\guardian\services.py:124
+#: .\courses_apps\guardian\services.py:211
+msgid "Guardian does not exist."
+msgstr ""
+
+#: .\courses_apps\guardian\services.py:116
+#: .\courses_apps\guardian\services.py:163
+#: .\courses_apps\teacher\services.py:159
+msgid "Pin must be at least 6 characters long."
+msgstr ""
+
+#: .\courses_apps\guardian\services.py:156
+msgid "Child does not belong to the guardian."
+msgstr ""
+
+#: .\courses_apps\guardian\services.py:158
+#: .\courses_apps\guardian\services.py:209
+msgid "Child does not exist."
+msgstr ""
+
+#: .\courses_apps\guardian\services.py:160
+#: .\courses_apps\guardian\services.py:213
+msgid "Guardian cannot modify this child."
+msgstr ""
+
+#: .\courses_apps\guardian\services.py:165
+msgid "Pin must be a number."
+msgstr ""
+
+#: .\courses_apps\guardian\services.py:179
+msgid "Username must be at least 6 characters long."
+msgstr ""
+
+#: .\courses_apps\guardian\services.py:217
+msgid "Guardian not associated with child."
+msgstr ""
+
+#: .\courses_apps\learner\selectors.py:20
+msgid "Learner does not exist."
+msgstr ""
+
+#: .\courses_apps\teacher\selectors.py:84
+#: .\courses_apps\teacher\services.py:120
+msgid "Teacher does not exist."
+msgstr ""
+
+#: .\courses_apps\teacher\services.py:112
+msgid "Password must be at least 8 characters long."
+msgstr ""
+
+#: .\courses_apps\teacher\services.py:152
+#: .\courses_apps\teacher\services.py:203
+msgid "student does not belong to the teacher."
+msgstr ""
+
+#: .\courses_apps\teacher\services.py:154
+#: .\courses_apps\teacher\services.py:199
+msgid "student does not exist."
+msgstr ""
+
+#: .\courses_apps\teacher\services.py:156
+msgid "Teacher cannot modify this student."
+msgstr ""
+
+#: .\courses_apps\teacher\services.py:171
+msgid "Username must be at least 8 characters long."
+msgstr ""
+
+#: .\courses_apps\teacher\services.py:201
+msgid "teacher does not exist."
+msgstr ""
+
+#: .\courses_apps\teacher\services.py:205
+msgid "teacher cannot modify this student."
+msgstr ""

@@ -1,0 +1,87 @@
+version: "3.8"
+services:
+  db:
+    build:
+      context: seepalaya-new-database 
+      dockerfile: Dockerfile.postgres
+    container_name: seepalaya-db 
+    env_file:
+      - ./seepalaya-new-database/.env 
+    volumes:
+      - ./db/:/var/lib/postgresql/
+    networks:
+      - seepalaya-new 
+    restart: always
+
+
+  seepalaya-backend:
+    build:
+      context: seepalaya-new-backend 
+      dockerfile: Dockerfile
+    container_name: seepalaya-backend 
+    command: "python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - 8000:8000
+    env_file:
+      - ./seepalaya-new-backend/src/.env 
+    environment:
+      - CELERY_BROKER_URL=amqp://myuser:mypassword@rabbitmq:5672
+    depends_on:
+      - db
+    networks:
+      - seepalaya-new 
+    restart: always
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=myuser
+      - RABBITMQ_DEFAULT_PASS=mypassword
+    networks:
+      - seepalaya-new 
+    restart: always
+
+  seepalaya-celery:
+    build:
+      context: seepalaya-new-celery 
+      dockerfile: Dockerfile
+    container_name: seepalaya-celery 
+    command: celery -A config worker -l info 
+    environment:
+      - CELERY_BROKER_URL=amqp://myuser:mypassword@rabbitmq:5672 
+    depends_on:
+      - rabbitmq
+      - seepalaya-backend 
+    networks:
+      - seepalaya-new 
+    restart: always
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.12.1
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+    networks:
+      - seepalaya-new
+    restart: always
+  
+  seepalaya-front:
+    build:
+      context: seepalaya_new
+      dockerfile: Dockerfile     
+    container_name: seepalaya-front
+    env_file:
+      - ./seepalaya_new/.env
+    ports:
+      - "3000:3000"
+    networks:
+      - seepalaya-new
+    restart: always
+
+networks:
+  seepalaya-new:
+    driver: bridge
+
